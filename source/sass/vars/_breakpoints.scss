@@ -1,0 +1,42 @@
+// ===================================================
+// BREAKPOINTS:
+// ===================================================
+
+
+// Media queries breakpoints (Mobile First Method)
+// --------------------------------------------------
+
+/* 
+// Example
+@media screen and (min-width: $mobile) {
+    
+}
+*/
+
+// Mobile (portrait)
+$min-width:         320px !default;
+
+// Mobile (landscape)
+$mobile:            480px !default;
+
+// Phablet
+$phablet:           768px !default;
+
+// Tablet (portrait)
+$tablet:            940px !default;
+
+// Laptop
+$laptop:            1024px !default;
+
+// Desktop/Tablet (landscape)
+$desktop:           1280px !default;
+
+
+$max-width:         1440px !default;
+
+
+$desktop-large:     1600px !default;
+
+
+$desktop-x-large:   1800px !default;
+

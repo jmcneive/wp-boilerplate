@@ -1,0 +1,108 @@
+// ===================================================
+// All core sizing helper classes
+// ===================================================
+
+.ratio-box {
+
+    &:before {
+        content: "";
+        display: block;
+    }
+
+    &.square {
+        &:before {
+            padding-top: 100%;
+        }
+    }
+
+    &.rectangle {
+        &:before {
+            padding-top: 49.5%;
+        }
+    }
+
+    &.masthead {
+        &:before {
+            padding-top: 40%;
+        }
+    }
+
+    &.slide {
+        &:before {
+
+            padding-top: 100%;
+
+            @media screen and (min-width: $mobile) {
+                padding-top: 50%;
+            }
+        }
+    }
+
+    &.slide-parallax {
+        &:before {
+            padding-top: 75%;
+        }
+    }
+
+    position: relative;
+}
+
+.ratio-box-responsive {
+
+    &:before {
+        content: normal;
+        display: inline;
+
+        @media screen and (min-width: $phablet) {
+            content: "";
+            display: block;
+        }
+    }
+
+    &.square {
+        &:before {
+
+            @media screen and (min-width: $phablet) {
+                padding-top: 100%;
+            }
+        }
+    }
+
+    &.rectangle {
+        &:before {
+            padding-top: 100%;
+
+            @media screen and (min-width: $phablet) {
+                padding-top: 49.5%;
+            }
+        }
+    }
+
+    position: relative;
+}
+
+.ratio-block {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.ratio-block-responsive {
+
+    position: relative;
+    overflow: visible;
+
+    @media screen and (min-width: $phablet) {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+    }
+}

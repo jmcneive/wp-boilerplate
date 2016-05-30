@@ -1,0 +1,36 @@
+// ===================================================
+// All core UI coaster that share the same basic look
+// will descend from .coaster
+//
+// Note: Animations were moved to _layout-flavors-grid.scss
+// so the filter labels do not animate.
+// ===================================================
+
+
+.label {
+    position: relative;
+    padding-bottom: 100.25%;
+    background-color: #9d9ca0;
+    color: #fff;
+    border-radius: 50%;
+    
+    .label-inner {
+        position: absolute;
+        top: 4%;
+        right: 4%;
+        bottom: 4%;
+        left: 4%;
+        z-index: 1;
+        background-color: #231f20;
+        border-radius: 50%;
+        
+        img {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

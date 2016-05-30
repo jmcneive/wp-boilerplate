@@ -1,0 +1,27 @@
+// ===================================================
+// LAYOUT:
+// ===================================================
+
+// Page
+$page-padding:                      16px;
+
+// Default padding base
+$base-padding:                      em($page-padding);
+
+// Header/Nav
+$header-height-sm:                  em(54px);
+$header-height:                     em(64px);
+$header-height-lg:                  em(80px);
+
+// Footer
+
+
+// Z-Index Map
+$z-index-nav:                       100;
+
+$z-index-home-about:                10;
+$z-index-home-recipes:              20;
+$z-index-home-footer:               30;
+
+// Masthead
+$masthead-max-height:               720px;

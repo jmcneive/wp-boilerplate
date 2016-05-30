@@ -1,0 +1,27 @@
+// ===================================================
+// COLOR:
+// ===================================================
+
+// Base
+// -------------------------------------//
+
+$white:                 #ffffff;
+$grey:                  #939598;
+$black:                 #000;
+
+$instagram:             #517fa4;
+$pinterest:             #c92228;
+$facebook:              #3b5998;
+$twitter:               #0093d7;
+
+
+// Variants
+// -------------------------------------//
+
+$grey-darkest:          darken($grey, 75%);
+$grey-darker:           darken($grey, 50%);
+$grey-dark:             darken($grey, 25%);
+$grey-light:            lighten($grey, 25%);
+$grey-lighter:          lighten($grey, 30%);
+$grey-lightest:         lighten($grey, 35%);
+

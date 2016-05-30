@@ -1,0 +1,79 @@
+// ===================================================
+// UTILITIES:
+// ===================================================
+
+@mixin font-smoothing {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+
+    /* the line below is a hack to get Chrome to render fonts decently on Windows */
+    //-webkit-text-stroke-width: 0.5px;
+}
+
+/*
+@function em($px, $base: $font-base) {
+    @return ($px / $base) * 1em;
+}
+*/
+
+// For nested type
+// $font-size: 10px;
+// font-size: em($font-size);
+// .title {
+//     font-size: em(10px, $font-size);
+// }
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+
+// Fixes extra padding under images set to inline-block
+@mixin inline-fix {
+    margin: 0;
+    vertical-align: top;
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin preserve-3d {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@mixin debug {
+    border: solid red 1px !important;
+}
+
+@mixin transition-hover {
+    transition: all 0.25s ease-out 0s;
+}
+
+@mixin stroke($stroke-color: $grey-light) {
+    -webkit-text-stroke: 1px $stroke-color;
+    text-shadow:
+        -1px -1px 0 $stroke-color,  
+        1px -1px 0 $stroke-color,
+        -1px 1px 0 $stroke-color,
+        1px 1px 0 $stroke-color;
+}

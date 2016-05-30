@@ -1,0 +1,13 @@
+// Input color and borders
+$input-background-color:                  $white;
+$input-border:                            1px solid $grey-light;
+$input-border-focus-color:                $grey-dark;
+$input-border-radius:                     em(5px);
+
+// Styled select
+$styled-select-btn-width:                 em(40px);
+$styled-select-btn-icon-font-family:      'icomoon';
+$styled-select-btn-icon-font-code:        '';
+$styled-select-btn-icon-color:            $grey-darker;
+$styled-select-btn-icon-position-top:     23%;
+$styled-select-padding-right:             $styled-select-btn-width;

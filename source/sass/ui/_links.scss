@@ -1,0 +1,21 @@
+// ===================================================
+// All core UI links that share the same basic look
+// will descend from .link
+// ===================================================
+
+.link {
+    color: $grey;
+    text-decoration: underline;
+    @include transition-hover();
+    
+    &:hover,
+    &.active,
+    &.is-active {
+        color: $white;
+        text-decoration: none;
+    }
+
+    &.link-footer {
+        text-decoration: none;
+    }
+}

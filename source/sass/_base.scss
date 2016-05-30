@@ -1,0 +1,92 @@
+*, 
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+.hidden {
+    display: none;
+}
+
+/* Prevent words from breaking between 2 letters */
+* {
+    word-break: keep-all;
+    -webkit-hyphens: none;
+}
+
+// Usually 0.5 base font size works
+sup {
+    font-size: em(8px);
+}
+
+html {
+
+    background-color: $black;
+
+    @include font-smoothing();
+
+/*
+    font-size: 13px;
+
+    @media screen and (min-width: $phablet) {
+        font-size: 14px;
+    }
+    @media screen and (min-width: $tablet) {
+        font-size: 15px;
+    }
+    @media screen and (min-width: $laptop) {
+        font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 17px;
+    }
+    @media screen and (min-width: $max-width) {
+        font-size: 18px;
+    }
+*/
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.main {
+
+    width: 100%;
+    min-width: $min-width;
+    margin: 0 auto 0 auto;
+    background: $white;
+    
+    @media screen and (min-width: $phablet) {
+        margin: $header-height-sm auto 0 auto;
+    }
+    
+    @media screen and (min-width: $tablet) {
+
+        margin: $header-height auto 0 auto;
+    }
+
+    @media screen and (min-width: $laptop) {
+
+        margin: $header-height-lg auto 0 auto;
+    }
+}
+
+div.inner {
+    
+    width: 100%;
+    // Make sure content can extend out to full visual width
+    // while retaining padding at smaller sizes
+    max-width: $max-width + ($page-padding * 2);
+    margin: 0 auto;
+    padding: 0;
+
+    @media screen and (min-width: $phablet) {
+
+        padding: 0 $page-padding;
+    }
+}

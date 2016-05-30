@@ -1,0 +1,40 @@
+// RESETS
+@import "vendor/normalize";
+
+// VARS
+@import "vars/color";
+@import "vars/type";
+@import "vars/icons";
+@import "vars/breakpoints";
+@import "vars/layout";
+@import "vars/forms";
+
+
+// MIXINS
+@import "utilities/mixins";
+
+// VENDOR STYLES
+@import "vendor/typeplate-sk/typeplate";
+
+// ALL GLOBAL UI
+@import "ui/buttons";
+@import "ui/links";
+@import "ui/sizing";
+@import "ui/forms";
+@import "ui/labels";
+
+// ALL ABOUT THAT BASE
+@import "base";
+
+// ALL SEGMENTED LAYOUT STYLES
+@import "layout/header";
+@import "layout/footer";
+@import "layout/modal";
+
+// PAGE SPECIFIC STYLES
+
+// Home
+//@import "layout/home";
+
+// Modals
+//@import "layout/modal-name";

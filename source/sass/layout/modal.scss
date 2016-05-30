@@ -1,0 +1,111 @@
+.modal {
+    
+    label {
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    .modal-open {
+        overflow: hidden;
+    }
+    
+    // overlay
+    .modal-window {
+        transition: opacity 0.5s ease 0s;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; 
+        background: rgba($black, 0.85);
+        opacity: 0;
+        text-align: left;
+        visibility: hidden;
+        z-index: 99999999999;
+        overflow-y: scroll;
+    
+        .modal-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;           
+            cursor: pointer;
+        }
+    }
+    
+    .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        // font-family: $libre-baskerville;
+        font-size: em(30px);
+        color: $grey;
+        cursor: pointer;
+        @include transition-hover();
+        
+        &:hover {
+            color: darken($grey-darker, 15%);
+        }
+    }
+
+    .modal-inner {
+        position: relative;
+        transition: opacity 0.5s ease 0s;
+        background: $white;
+        margin: $page-padding auto;
+        padding: $page-padding;
+        overflow: visible;
+        width: 95%;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+
+        @media screen and (min-width: $phablet) {
+            padding: $page-padding * 2;
+        }
+
+        @media screen and (min-width: $laptop) {
+
+            padding: $page-padding * 3;
+            width: 70%;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            
+            .left-col {
+                float: left;
+                width: 50%;
+                padding: 0 2%;
+            }
+            
+            .right-col {
+                float: left;
+                width: 50%;
+                padding: 0 2%;
+            }
+        }
+
+        @media screen and (min-width: $max-width) {
+            max-width: $laptop;
+            width: 70%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+    }
+    
+    .modal-state:checked + .modal-window {
+        opacity: 1;
+        visibility: visible;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .modal-state:checked + .modal-window .modal-inner {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}

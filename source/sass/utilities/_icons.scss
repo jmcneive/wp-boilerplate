@@ -1,0 +1,127 @@
+// Icon Goodies (from font-awesome)
+// ------------------------------------------------------------
+
+@mixin icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+
+
+// Allows you to include icomoon icons, positioned exactly how
+// you want them, in your existing CSS classes with one line.
+//
+// Credits: James Shakespeare
+// http://jshak.es/easy-icomoon-icons-with-sass/ 
+// --------------------------------------------------
+
+@mixin icomoon($icon, $position: "before", $replace: false) {
+    
+    // If we're replacing the text, set font-size to 0
+    @if $replace {
+        font-size: 0;
+    }
+    
+    // Pseudo-element properties
+    &:#{$position} {
+        @extend .icon-#{$icon}:before;
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        
+        @if $replace {
+          font-size: 1rem;
+        }
+        @content;
+    }
+}
+
+
+// Icon Helper Classes
+// Credits: Font Awesome
+// --------------------------------------------------
+
+// Icon Sizes
+// -------------------------
+
+/* makes the font 33% larger relative to the i container */
+.i-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+
+.i-2x { font-size: 2em; }
+.i-3x { font-size: 3em; }
+.i-4x { font-size: 4em; }
+.i-5x { font-size: 5em; }
+
+
+// Stacked Icons
+// -------------------------
+
+.i-stack {
+  position: relative;
+  display: inline-block;
+  width: 1.8em;
+  height: 2em;
+  line-height: 2.1em;
+  vertical-align: middle;
+}
+
+.i-stack-1x, .i-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.i-stack-1x {
+    line-height: inherit !important;
+}
+
+.i-stack-2x {
+    font-size: 2em;
+}
+
+.i-inverse {
+    color: $white;
+}
+
+
+// Rotated & Flipped Icons
+// -------------------------
+
+.i-rotate-90  { @include icon-rotate(90deg, 1);  }
+.i-rotate-180 { @include icon-rotate(180deg, 2); }
+.i-rotate-270 { @include icon-rotate(270deg, 3); }
+
+.i-flip-horizontal { @include icon-flip(-1, 1, 0); }
+.i-flip-vertical   { @include icon-flip(1, -1, 2); }
+
+
+// Hook for IE8-9
+// -------------------------
+
+:root .i-rotate-90,
+:root .i-rotate-180,
+:root .i-rotate-270,
+:root .i-flip-horizontal,
+:root .i-flip-vertical {
+  filter: none;
+}

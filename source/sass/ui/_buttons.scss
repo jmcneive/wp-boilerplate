@@ -1,0 +1,81 @@
+// ===================================================
+// All core UI buttons that share the same basic look
+// will descend from .button
+// ===================================================
+
+// Default button is white:
+.button {
+    display: inline-block;
+    @include proxima-nova-bold();
+    @include typl8-typescale($delta, $font-base, rem);
+    color: $white;
+    background-color: transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    border: 1px solid $white;
+    border-radius: 0;
+    vertical-align: middle;
+    line-height: em(30px);
+    padding: 0 em(30px);
+    text-align: center;
+    @include transition-hover();
+
+    label,
+    input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    &:hover,
+    &.active {
+        color: $grey;
+        background-color: $white;
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+
+    &.compressed {
+        @include typl8-typescale($zeta, $font-base, rem);
+        padding: 0 em(20px);
+    }
+
+/*
+    // Add custom colored button classes like so:
+    
+    &.color-name {
+        color: $white;
+        border: none;
+        
+        &:hover,
+        &.active {
+            color: $grey-dark;
+            background-color: $white;
+        }
+    }
+*/
+    
+    &.disabled {
+        color: $grey-lighter;
+        border-color: $grey-lighter;
+        opacity: 0.5;
+        cursor: default;
+
+        &:hover,
+        &.active {
+            color: $grey-lighter;
+            border-color: $grey-lighter;
+        }
+    }
+}

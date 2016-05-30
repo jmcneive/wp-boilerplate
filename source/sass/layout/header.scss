@@ -1,0 +1,46 @@
+.header {
+
+    position: relative;
+    width: 100%;
+    height: $header-height-sm;
+    overflow-y: hidden;
+    background-color: $grey-darker;
+    z-index: $z-index-nav;
+    box-shadow: 0px 0px em(28px) $black;
+
+    transition: height 0.4s ease-in-out 0s;
+
+    @media screen and (min-width: $phablet) {
+
+        position: absolute;
+        top: 0;
+        height: $header-height-sm;
+
+        &.open {
+            height: $header-height-sm;
+        }
+    }
+    
+    @media screen and (min-width: $tablet) {
+
+        height: $header-height;
+
+        &.open {
+            height: $header-height;
+        }
+    }
+    
+    @media screen and (min-width: $laptop) {
+
+        position: fixed;
+        height: $header-height-lg;
+
+        &.open {
+            height: $header-height-lg;
+        }
+    }
+    
+    a.brand-logo {
+
+    }
+}
